@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -20,6 +22,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 public class Menu extends JFrame {
 
@@ -145,16 +148,27 @@ public class Menu extends JFrame {
 		FamilyState.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(48, 30, 564, 51);
+		scrollPane.setBounds(48, 0, 564, 81);
 		FamilyState.add(scrollPane);
+		
+		JTextArea FamilyStateTextArea = new JTextArea();
+		FamilyStateTextArea.setText("例如：家族性遗传病，父母有无高血压病，糖尿病，高血脂，脑梗等;有无近亲结婚史");
+		FamilyStateTextArea.addFocusListener(new FocusAdapter() {
+
+			@Override
+			public void focusGained(FocusEvent arg0) {
+				// TODO Auto-generated method stub
+				FamilyStateTextArea.setText("");
+			}
+			
+			
+		});
+		
+		scrollPane.setViewportView(FamilyStateTextArea);
 		
 		JLabel label_1 = new JLabel("家族史");
 		label_1.setBounds(0, 0, 48, 81);
 		FamilyState.add(label_1);
-		
-		JLabel lblNewLabel = new JLabel("例如：家族性遗传病，父母有无高血压病，糖尿病，高血脂，脑梗等;有无近亲结婚史");
-		lblNewLabel.setBounds(68, 0, 544, 13);
-		FamilyState.add(lblNewLabel);
 		
 		JButton saveButton = new JButton("保存");
 		saveButton.addActionListener(new ActionListener() {
