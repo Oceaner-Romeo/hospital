@@ -26,6 +26,8 @@ import javax.swing.JTextArea;
 import javax.swing.JCheckBox;
 import java.awt.Color;
 import javax.swing.JRadioButton;
+import java.awt.SystemColor;
+import javax.swing.UIManager;
 
 public class Menu extends JFrame {
 
@@ -95,7 +97,7 @@ public class Menu extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel Info = new JPanel();
-		Info.setBackground(Color.LIGHT_GRAY);
+		Info.setBackground(SystemColor.info);
 		Info.setToolTipText("Info");
 		Info.setBounds(12, 12, 1142, 53);
 		contentPane.add(Info);
@@ -140,6 +142,7 @@ public class Menu extends JFrame {
 		Info.add(comboBox_1);
 		
 		JPanel GravidityState = new JPanel();
+		GravidityState.setBackground(UIManager.getColor("OptionPane.questionDialog.border.background"));
 		GravidityState.setBounds(12, 77, 1142, 196);
 		contentPane.add(GravidityState);
 		GravidityState.setLayout(null);
@@ -149,7 +152,7 @@ public class Menu extends JFrame {
 		GravidityState.add(label_9);
 		
 		JPanel MarriageState = new JPanel();
-		MarriageState.setBackground(Color.LIGHT_GRAY);
+		MarriageState.setBackground(UIManager.getColor("OptionPane.warningDialog.titlePane.shadow"));
 		MarriageState.setBounds(12, 281, 612, 74);
 		contentPane.add(MarriageState);
 		MarriageState.setLayout(null);
@@ -185,10 +188,12 @@ public class Menu extends JFrame {
 		MarriageState.add(comboBox_2);
 		
 		JPanel MensesState = new JPanel();
+		MensesState.setBackground(UIManager.getColor("RadioButtonMenuItem.acceleratorForeground"));
 		MensesState.setBounds(12, 363, 612, 155);
 		contentPane.add(MensesState);
 		
 		JPanel AllergyHistory = new JPanel();
+		AllergyHistory.setBackground(new Color(255, 218, 185));
 		AllergyHistory.setBounds(12, 527, 612, 88);
 		contentPane.add(AllergyHistory);
 		AllergyHistory.setLayout(null);
@@ -202,10 +207,32 @@ public class Menu extends JFrame {
 		AllergyHistory.add(scrollPane_2);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setText("例如：头孢类，青霉素过敏等");
 		scrollPane_2.setViewportView(textArea);
 		
+		textArea.addFocusListener(new FocusAdapter() {
+
+			@Override
+			public void focusGained(FocusEvent arg0) {
+				// TODO Auto-generated method stub
+				if(textArea.getText().equals("例如：头孢类，青霉素过敏等")) {
+					textArea.setText("");
+				}				
+			}
+
+			@Override
+			public void focusLost(FocusEvent arg0) {
+				// TODO Auto-generated method stub
+				if(textArea.getText().length()<1) {
+					textArea.setText("例如：头孢类，青霉素过敏等");
+				}
+			}
+			
+			
+		});
+		
 		JPanel FamilyState = new JPanel();
-		FamilyState.setBackground(Color.LIGHT_GRAY);
+		FamilyState.setBackground(SystemColor.info);
 		FamilyState.setBounds(12, 627, 612, 81);
 		contentPane.add(FamilyState);
 		FamilyState.setLayout(null);
@@ -255,7 +282,8 @@ public class Menu extends JFrame {
 		contentPane.add(saveButton);
 		
 		JPanel PastHistory = new JPanel();
-		PastHistory.setBounds(636, 281, 518, 237);
+		PastHistory.setBackground(new Color(199, 21, 133));
+		PastHistory.setBounds(636, 285, 518, 237);
 		contentPane.add(PastHistory);
 		PastHistory.setLayout(null);
 		
@@ -263,55 +291,44 @@ public class Menu extends JFrame {
 		label_3.setBounds(12, 112, 39, 13);
 		PastHistory.add(label_3);
 		
-		JLabel label_7 = new JLabel("高血压");
-		label_7.setBounds(164, 12, 63, 13);
-		PastHistory.add(label_7);
-		
-		JRadioButton radioButton = new JRadioButton("有");
-		radioButton.setBounds(241, 8, 47, 21);
+		JRadioButton radioButton = new JRadioButton("高血压");
+		radioButton.setBounds(124, 8, 153, 21);
 		PastHistory.add(radioButton);
 		
-		JRadioButton radioButton_1 = new JRadioButton("没有");
-		radioButton_1.setBounds(287, 4, 69, 21);
-		PastHistory.add(radioButton_1);
-		
-		JLabel label_8 = new JLabel("糖尿病");
-		label_8.setBounds(164, 37, 63, 13);
-		PastHistory.add(label_8);
-		
-		JRadioButton radioButton_2 = new JRadioButton("有");
-		radioButton_2.setBounds(241, 33, 47, 21);
+		JRadioButton radioButton_2 = new JRadioButton("糖尿病");
+		radioButton_2.setBounds(124, 46, 153, 21);
 		PastHistory.add(radioButton_2);
 		
-		JRadioButton radioButton_3 = new JRadioButton("没有");
-		radioButton_3.setBounds(287, 29, 69, 21);
-		PastHistory.add(radioButton_3);
-		
-		JRadioButton radioButton_4 = new JRadioButton("有");
-		radioButton_4.setBounds(241, 58, 47, 21);
+		JRadioButton radioButton_4 = new JRadioButton("甲状腺疾病");
+		radioButton_4.setBounds(124, 79, 153, 21);
 		PastHistory.add(radioButton_4);
 		
-		JRadioButton radioButton_5 = new JRadioButton("没有");
-		radioButton_5.setBounds(287, 54, 69, 21);
-		PastHistory.add(radioButton_5);
-		
-		JRadioButton radioButton_6 = new JRadioButton("有");
-		radioButton_6.setBounds(241, 83, 47, 21);
+		JRadioButton radioButton_6 = new JRadioButton("近亲结婚");
+		radioButton_6.setBounds(124, 104, 153, 21);
 		PastHistory.add(radioButton_6);
 		
-		JRadioButton radioButton_7 = new JRadioButton("没有");
-		radioButton_7.setBounds(287, 79, 69, 21);
-		PastHistory.add(radioButton_7);
-		
-		JRadioButton radioButton_8 = new JRadioButton("有");
-		radioButton_8.setBounds(241, 108, 47, 21);
+		JRadioButton radioButton_8 = new JRadioButton("免疫系统疾病");
+		radioButton_8.setBounds(124, 138, 153, 21);
 		PastHistory.add(radioButton_8);
 		
-		JRadioButton radioButton_9 = new JRadioButton("没有");
-		radioButton_9.setBounds(287, 104, 69, 21);
-		PastHistory.add(radioButton_9);
+		JRadioButton radioButton_1 = new JRadioButton("接触化学制剂及毒品");
+		radioButton_1.setBounds(124, 163, 153, 21);
+		PastHistory.add(radioButton_1);
+		
+		JRadioButton radioButton_3 = new JRadioButton("高血脂");
+		radioButton_3.setBounds(124, 188, 153, 21);
+		PastHistory.add(radioButton_3);
+		
+		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setBounds(322, 50, 184, 175);
+		PastHistory.add(textArea_1);
+		
+		JLabel label_7 = new JLabel("其他疾病(备注)");
+		label_7.setBounds(378, 12, 63, 13);
+		PastHistory.add(label_7);
 		
 		JPanel OperationHistory = new JPanel();
+		OperationHistory.setBackground(new Color(0, 102, 0));
 		OperationHistory.setBounds(636, 527, 518, 181);
 		contentPane.add(OperationHistory);
 		OperationHistory.setLayout(null);
@@ -326,6 +343,7 @@ public class Menu extends JFrame {
 		
 		JTextArea OperationHistoryTextArea = new JTextArea();		
 		scrollPane_1.setViewportView(OperationHistoryTextArea);
+		OperationHistoryTextArea.setText("例如：宫腔镜，腹腔镜，开腹手术，输卵");
 		OperationHistoryTextArea.addFocusListener(new FocusAdapter() {
 
 			@Override
