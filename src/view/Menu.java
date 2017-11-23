@@ -145,7 +145,7 @@ public class Menu extends JFrame {
 		Info.add(comboBox_1);
 		
 		JPanel GravidityState = new JPanel();
-		GravidityState.setBackground(UIManager.getColor("OptionPane.questionDialog.border.background"));
+		GravidityState.setBackground(Color.GREEN);
 		GravidityState.setBounds(12, 77, 1142, 196);
 		contentPane.add(GravidityState);
 		GravidityState.setLayout(null);
@@ -181,7 +181,7 @@ public class Menu extends JFrame {
 		scrollPane_3.setViewportView(table);
 		
 		JPanel MarriageState = new JPanel();
-		MarriageState.setBackground(UIManager.getColor("OptionPane.warningDialog.titlePane.shadow"));
+		MarriageState.setBackground(Color.ORANGE);
 		MarriageState.setBounds(12, 281, 612, 74);
 		contentPane.add(MarriageState);
 		MarriageState.setLayout(null);
@@ -199,7 +199,7 @@ public class Menu extends JFrame {
 		MarriageState.add(chckbxNewCheckBox);
 		
 		JCheckBox checkBox = new JCheckBox("配偶再婚");
-		checkBox.setBounds(260, 45, 86, 21);
+		checkBox.setBounds(227, 45, 86, 21);
 		MarriageState.add(checkBox);
 		
 		JCheckBox checkBox_1 = new JCheckBox("目前再婚");
@@ -224,32 +224,111 @@ public class Menu extends JFrame {
 		MensesState.setLayout(null);
 		
 		JLabel label_8 = new JLabel("月经情况");
-		label_8.setBounds(0, 60, 63, 13);
+		label_8.setBounds(0, 70, 63, 13);
 		MensesState.add(label_8);
 		
 		JRadioButton radioButton_5 = new JRadioButton("月经规律");
-		radioButton_5.setBounds(95, 8, 137, 21);
+		radioButton_5.setBounds(60, 6, 137, 21);
 		MensesState.add(radioButton_5);
 		
-		JLabel label_10 = new JLabel("月经周期");
-		label_10.setBounds(105, 37, 63, 13);
+		JLabel label_10 = new JLabel("月经周期：");
+		label_10.setBounds(60, 33, 84, 13);
 		MensesState.add(label_10);
 		
 		JComboBox comboBox_3 = new JComboBox();
 		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"40", "39", "38", "37", "36", "35", "34", "33", "32", "31", "30", "29", "28", "27", "26", "25", "24", "23", "22", "21", "20", "19", "18"}));
 		comboBox_3.setSelectedIndex(10);
-		comboBox_3.setBounds(180, 32, 52, 22);
+		comboBox_3.setBounds(134, 28, 63, 22);
 		MensesState.add(comboBox_3);
 		
 		JLabel label_11 = new JLabel("第一次月经是：");
-		label_11.setBounds(95, 94, 124, 13);
+		label_11.setBounds(60, 104, 100, 13);
 		MensesState.add(label_11);
 		
 		JComboBox comboBox_4 = new JComboBox();
-		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26"}));
+		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"10岁", "11岁", "12岁", "13岁", "14岁", "15岁", "16岁", "17岁", "18岁", "19岁", "20岁", "21岁", "22岁", "23岁", "24岁", "25岁", "26岁"}));
 		comboBox_4.setSelectedIndex(5);
-		comboBox_4.setBounds(224, 89, 52, 22);
+		comboBox_4.setBounds(153, 99, 54, 22);
 		MensesState.add(comboBox_4);
+		
+		JLabel label_12 = new JLabel("最短天数：");
+		label_12.setBounds(220, 32, 76, 15);
+		MensesState.add(label_12);
+		
+		JLabel label_13 = new JLabel("最长天数：");
+		label_13.setBounds(375, 32, 76, 15);
+		MensesState.add(label_13);
+		
+		JComboBox comboBox_5 = new JComboBox();
+		comboBox_5.setModel(new DefaultComboBoxModel(new String[] {"10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43"}));
+		comboBox_5.setSelectedIndex(10);
+		comboBox_5.setBounds(291, 28, 63, 22);
+		MensesState.add(comboBox_5);
+		
+		JComboBox comboBox_6 = new JComboBox();
+		comboBox_6.setModel(new DefaultComboBoxModel(new String[] {"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"}));
+		comboBox_6.setBounds(450, 28, 63, 22);
+		MensesState.add(comboBox_6);
+		
+		JLabel label_14 = new JLabel("月经几天干净：");
+		label_14.setBounds(60, 56, 100, 15);
+		MensesState.add(label_14);
+		
+		JComboBox comboBox_7 = new JComboBox();
+		comboBox_7.setModel(new DefaultComboBoxModel(new String[] {"3", "4", "5", "6", "7", "8", "9"}));
+		comboBox_7.setBounds(153, 52, 54, 23);
+		MensesState.add(comboBox_7);
+		
+		JLabel label_15 = new JLabel("月经量：");
+		label_15.setBounds(220, 57, 58, 15);
+		MensesState.add(label_15);
+		
+		JComboBox comboBox_8 = new JComboBox();
+		comboBox_8.setModel(new DefaultComboBoxModel(new String[] {"20ml以下", "30ml-50ml", "50ml-60ml", "60ml-80ml", "80ml以上"}));
+		comboBox_8.setBounds(291, 52, 84, 23);
+		MensesState.add(comboBox_8);
+		
+		JLabel label_16 = new JLabel("末次月经时间：");
+		label_16.setBounds(60, 81, 100, 15);
+		MensesState.add(label_16);
+		
+		JRadioButton radioButton_7 = new JRadioButton("月经量有无减少");
+		radioButton_7.setBounds(60, 126, 127, 23);
+		MensesState.add(radioButton_7);
+		
+		JLabel label_17 = new JLabel("减少量：");
+		label_17.setBounds(220, 130, 58, 15);
+		MensesState.add(label_17);
+		
+		JComboBox comboBox_9 = new JComboBox();
+		comboBox_9.setModel(new DefaultComboBoxModel(new String[] {"5ml", "10ml", "15ml", "20ml", "25ml", "30ml", "35ml", "40ml"}));
+		comboBox_9.setBounds(291, 126, 63, 23);
+		MensesState.add(comboBox_9);
+		
+		JLabel label_18 = new JLabel("开始时间：");
+		label_18.setBounds(375, 130, 76, 15);
+		MensesState.add(label_18);
+		
+		JComboBox comboBox_10 = new JComboBox();
+		comboBox_10.setModel(new DefaultComboBoxModel(new String[] {"1个月前", "2个月前", "3个月前", "4个月前", "5个月前", "6个月前", "7个月前", "8个月前", "9个月前", "10个月前", "11个月前", "12个月前"}));
+		comboBox_10.setBounds(449, 126, 84, 23);
+		MensesState.add(comboBox_10);
+		
+		JComboBox comboBox_11 = new JComboBox();
+		comboBox_11.setModel(new DefaultComboBoxModel(new String[] {"2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033"}));
+		comboBox_11.setSelectedIndex(2);
+		comboBox_11.setBounds(153, 77, 54, 23);
+		MensesState.add(comboBox_11);
+		
+		JComboBox comboBox_12 = new JComboBox();
+		comboBox_12.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
+		comboBox_12.setBounds(214, 77, 54, 23);
+		MensesState.add(comboBox_12);
+		
+		JComboBox comboBox_13 = new JComboBox();
+		comboBox_13.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		comboBox_13.setBounds(278, 77, 54, 23);
+		MensesState.add(comboBox_13);
 		
 		JPanel AllergyHistory = new JPanel();
 		AllergyHistory.setBackground(new Color(255, 218, 185));
