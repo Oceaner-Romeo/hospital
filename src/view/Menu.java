@@ -28,12 +28,15 @@ import java.awt.Color;
 import javax.swing.JRadioButton;
 import java.awt.SystemColor;
 import javax.swing.UIManager;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class Menu extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField nameTextField;
 	private JTextField textField;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -151,6 +154,32 @@ public class Menu extends JFrame {
 		label_9.setBounds(0, 87, 63, 13);
 		GravidityState.add(label_9);
 		
+		JScrollPane scrollPane_3 = new JScrollPane();
+		scrollPane_3.setEnabled(false);
+		scrollPane_3.setBounds(81, -2, 1061, 198);
+		GravidityState.add(scrollPane_3);
+		
+		table = new JTable();
+		table.setEnabled(false);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+			},
+			new String[] {
+				"\u6000\u5B55\u6B21\u6570", "\u65F6\u95F4", "\u81EA\u7136\u53D7\u5B55", "\u8F85\u52A9\u751F\u6B96", "\u5B55\u5468", "\u5B55\u56CA", "\u80CE\u82BD", "\u80CE\u5FC3", "\u89C1\u7EA2", "\u80DE\u80CE\u60C5\u51B5\uFF08\u836F\u7269\uFF09", "\u6E05\u5BAB", "\u5907\u6CE8"
+			}
+		));
+		scrollPane_3.setViewportView(table);
+		
 		JPanel MarriageState = new JPanel();
 		MarriageState.setBackground(UIManager.getColor("OptionPane.warningDialog.titlePane.shadow"));
 		MarriageState.setBounds(12, 281, 612, 74);
@@ -191,6 +220,35 @@ public class Menu extends JFrame {
 		MensesState.setBackground(UIManager.getColor("RadioButtonMenuItem.acceleratorForeground"));
 		MensesState.setBounds(12, 363, 612, 155);
 		contentPane.add(MensesState);
+		MensesState.setLayout(null);
+		
+		JLabel label_8 = new JLabel("月经情况");
+		label_8.setBounds(0, 60, 63, 13);
+		MensesState.add(label_8);
+		
+		JRadioButton radioButton_5 = new JRadioButton("月经规律");
+		radioButton_5.setBounds(95, 8, 137, 21);
+		MensesState.add(radioButton_5);
+		
+		JLabel label_10 = new JLabel("月经周期");
+		label_10.setBounds(105, 37, 63, 13);
+		MensesState.add(label_10);
+		
+		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"40", "39", "38", "37", "36", "35", "34", "33", "32", "31", "30", "29", "28", "27", "26", "25", "24", "23", "22", "21", "20", "19", "18"}));
+		comboBox_3.setSelectedIndex(10);
+		comboBox_3.setBounds(180, 32, 52, 22);
+		MensesState.add(comboBox_3);
+		
+		JLabel label_11 = new JLabel("第一次月经是：");
+		label_11.setBounds(95, 94, 124, 13);
+		MensesState.add(label_11);
+		
+		JComboBox comboBox_4 = new JComboBox();
+		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26"}));
+		comboBox_4.setSelectedIndex(5);
+		comboBox_4.setBounds(224, 89, 52, 22);
+		MensesState.add(comboBox_4);
 		
 		JPanel AllergyHistory = new JPanel();
 		AllergyHistory.setBackground(new Color(255, 218, 185));
