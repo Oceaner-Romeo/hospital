@@ -72,7 +72,7 @@ public class Menu extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu menu = new JMenu("文件");
+		JMenu menu = new JMenu("菜单");
 		menuBar.add(menu);
 		
 		JMenuItem menuItem = new JMenuItem("退出");
@@ -160,7 +160,6 @@ public class Menu extends JFrame {
 		GravidityState.add(scrollPane_3);
 		
 		table = new JTable();
-		table.setEnabled(false);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null, null, null, null, null, null, null, null, null},
@@ -345,6 +344,7 @@ public class Menu extends JFrame {
 		AllergyHistory.add(scrollPane_2);
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setLineWrap(true);
 		textArea.setText("例如：头孢类，青霉素过敏等");
 		scrollPane_2.setViewportView(textArea);
 		
@@ -381,6 +381,7 @@ public class Menu extends JFrame {
 		
 		
 		JTextArea FamilyStateTextArea = new JTextArea();
+		FamilyStateTextArea.setLineWrap(true);
 		FamilyStateTextArea.setText("例如：家族性遗传病，父母有无高血压病，糖尿病，高血脂，脑梗等;有无近亲结婚史");
 		FamilyStateTextArea.addFocusListener(new FocusAdapter() {
 
@@ -458,6 +459,7 @@ public class Menu extends JFrame {
 		PastHistory.add(radioButton_3);
 		
 		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setLineWrap(true);
 		textArea_1.setBounds(322, 50, 184, 175);
 		PastHistory.add(textArea_1);
 		
@@ -480,6 +482,7 @@ public class Menu extends JFrame {
 		OperationHistory.add(scrollPane_1);
 		
 		JTextArea OperationHistoryTextArea = new JTextArea();		
+		OperationHistoryTextArea.setLineWrap(true);
 		scrollPane_1.setViewportView(OperationHistoryTextArea);
 		OperationHistoryTextArea.setText("例如：宫腔镜，腹腔镜，开腹手术，输卵");
 		OperationHistoryTextArea.addFocusListener(new FocusAdapter() {
