@@ -185,7 +185,7 @@ public class Menu extends JFrame {
 		contentPane.add(MarriageState);
 		MarriageState.setLayout(null);
 		
-		JLabel label_2 = new JLabel("婚育状况");
+		JLabel label_2 = new JLabel("婚育情况");
 		label_2.setBounds(0, 31, 52, 13);
 		MarriageState.add(label_2);
 		
