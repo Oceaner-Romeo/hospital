@@ -150,7 +150,7 @@ public class Menu extends JFrame {
 		contentPane.add(GravidityState);
 		GravidityState.setLayout(null);
 		
-		JLabel label_9 = new JLabel("怀孕状况");
+		JLabel label_9 = new JLabel("怀孕情况");
 		label_9.setBounds(0, 87, 63, 13);
 		GravidityState.add(label_9);
 		
@@ -217,7 +217,8 @@ public class Menu extends JFrame {
 		MarriageState.add(comboBox_2);
 		
 		JPanel MensesState = new JPanel();
-		MensesState.setBackground(UIManager.getColor("RadioButtonMenuItem.acceleratorForeground"));
+		MensesState.setForeground(Color.BLACK);
+		MensesState.setBackground(Color.BLUE);
 		MensesState.setBounds(12, 363, 612, 155);
 		contentPane.add(MensesState);
 		MensesState.setLayout(null);
