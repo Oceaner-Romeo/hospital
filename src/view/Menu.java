@@ -8,6 +8,7 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -173,11 +174,6 @@ public class Menu extends JFrame {
 		hyqkTable = new JTable();
 		hyqkTable.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null, null, null, null},
@@ -555,6 +551,7 @@ public class Menu extends JFrame {
 		JTextArea qtjbTextArea = new JTextArea();
 		qtjbTextArea.setLineWrap(true);
 		qtjbTextArea.setBounds(322, 50, 184, 175);
+		qtjbTextArea.setBorder(new LineBorder(new java.awt.Color(127,157,185), 1, false));
 		PastHistory.add(qtjbTextArea);
 		
 		JLabel qtjbLabel = new JLabel("其他疾病(备注)");
