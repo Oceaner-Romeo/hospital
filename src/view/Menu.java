@@ -15,6 +15,8 @@ import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -150,9 +152,9 @@ public class Menu extends JFrame {
 		contentPane.add(GravidityState);
 		GravidityState.setLayout(null);
 		
-		JLabel syqkLable = new JLabel("怀孕情况");
-		syqkLable.setBounds(0, 87, 63, 13);
-		GravidityState.add(syqkLable);
+		JLabel hyqkLable = new JLabel("怀孕情况");
+		hyqkLable.setBounds(0, 87, 63, 13);
+		GravidityState.add(hyqkLable);
 		
 		JScrollPane hyqkScrollPane = new JScrollPane();
 		hyqkScrollPane.setEnabled(false);
@@ -189,9 +191,38 @@ public class Menu extends JFrame {
 		hyqkLabel.setBounds(0, 31, 52, 13);
 		MarriageState.add(hyqkLabel);
 		
+		JCheckBox zdlcCheckBox = new JCheckBox("有过主动流产");
+		zdlcCheckBox.setBackground(Color.WHITE);
+		zdlcCheckBox.setBounds(82, 8, 116, 21);
+		MarriageState.add(zdlcCheckBox);
+		
 		JLabel zdlccsLabel = new JLabel("次数：");
 		zdlccsLabel.setBounds(294, 12, 52, 13);
 		MarriageState.add(zdlccsLabel);
+		zdlccsLabel.setVisible(false);
+		
+		JComboBox zdlccsComboBox = new JComboBox();
+		zdlccsComboBox.setModel(new DefaultComboBoxModel(new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"}));
+		zdlccsComboBox.setSelectedIndex(0);
+		zdlccsComboBox.setBounds(375, 7, 63, 22);
+		MarriageState.add(zdlccsComboBox);
+		zdlccsComboBox.setVisible(false);
+		
+		zdlcCheckBox.addItemListener(new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent arg0) {
+				// TODO Auto-generated method stub
+				JCheckBox jcb = (JCheckBox) arg0.getItem();
+		        if (jcb.isSelected()) {
+		        	zdlccsLabel.setVisible(true);
+		        	zdlccsComboBox.setVisible(true);
+		        } else {  
+		        	zdlccsLabel.setVisible(false);
+		        	zdlccsComboBox.setVisible(false);
+		        } 
+			}
+		});
 		
 		JCheckBox yznCheckBox = new JCheckBox("有子女");
 		yznCheckBox.setBackground(Color.WHITE);
@@ -208,17 +239,6 @@ public class Menu extends JFrame {
 		mqzhCheckBox.setBounds(82, 45, 86, 21);
 		MarriageState.add(mqzhCheckBox);
 		
-		JCheckBox zdlcCheckBox = new JCheckBox("有过主动流产");
-		zdlcCheckBox.setBackground(Color.WHITE);
-		zdlcCheckBox.setBounds(82, 8, 116, 21);
-		MarriageState.add(zdlcCheckBox);
-		
-		JComboBox zdlccsComboBox = new JComboBox();
-		zdlccsComboBox.setModel(new DefaultComboBoxModel(new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"}));
-		zdlccsComboBox.setSelectedIndex(0);
-		zdlccsComboBox.setBounds(375, 7, 63, 22);
-		MarriageState.add(zdlccsComboBox);
-		
 		JPanel MensesState = new JPanel();
 		MensesState.setForeground(Color.BLACK);
 		MensesState.setBackground(Color.WHITE);
@@ -229,10 +249,54 @@ public class Menu extends JFrame {
 		JLabel yjqkLabel = new JLabel("月经情况");
 		yjqkLabel.setBounds(0, 70, 63, 13);
 		MensesState.add(yjqkLabel);
+
+		JCheckBox yjbglCheckBox = new JCheckBox("月经不规律");
+		yjbglCheckBox.setBackground(Color.WHITE);
+		yjbglCheckBox.setBounds(60, 4, 109, 23);
+		MensesState.add(yjbglCheckBox);
 		
-		JRadioButton yjglRadioButton = new JRadioButton("月经规律");
-		yjglRadioButton.setBounds(60, 6, 137, 21);
-		MensesState.add(yjglRadioButton);
+		JLabel zdtsLabel = new JLabel("最短天数：");
+		zdtsLabel.setBounds(220, 32, 76, 15);
+		MensesState.add(zdtsLabel);
+		zdtsLabel.setVisible(false);
+		
+		JComboBox zdtsComboBox = new JComboBox();
+		zdtsComboBox.setModel(new DefaultComboBoxModel(new String[] {"10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43"}));
+		zdtsComboBox.setSelectedIndex(10);
+		zdtsComboBox.setBounds(291, 28, 63, 22);
+		MensesState.add(zdtsComboBox);
+		zdtsComboBox.setVisible(false);
+		
+		JLabel zctsLabel = new JLabel("最长天数：");
+		zctsLabel.setBounds(375, 32, 76, 15);
+		MensesState.add(zctsLabel);
+		zctsLabel.setVisible(false);
+		
+		JComboBox zctsComboBox = new JComboBox();
+		zctsComboBox.setModel(new DefaultComboBoxModel(new String[] {"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"}));
+		zctsComboBox.setBounds(450, 28, 63, 22);
+		MensesState.add(zctsComboBox);
+		zctsComboBox.setVisible(false);
+		
+		yjbglCheckBox.addItemListener(new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent arg0) {
+				// TODO Auto-generated method stub
+				JCheckBox jcb = (JCheckBox) arg0.getItem();
+		        if (jcb.isSelected()) {
+		        	zdtsLabel.setVisible(true);
+		        	zdtsComboBox.setVisible(true);
+		        	zctsLabel.setVisible(true);
+		        	zctsComboBox.setVisible(true);
+		        } else {
+		        	zdtsLabel.setVisible(false);
+		        	zdtsComboBox.setVisible(false);
+		        	zctsLabel.setVisible(false);
+		        	zctsComboBox.setVisible(false);
+		        } 
+			}
+		});
 		
 		JLabel yjzqLabel = new JLabel("月经周期：");
 		yjzqLabel.setBounds(60, 33, 84, 13);
@@ -253,25 +317,6 @@ public class Menu extends JFrame {
 		dycyjComboBox.setSelectedIndex(5);
 		dycyjComboBox.setBounds(153, 99, 54, 22);
 		MensesState.add(dycyjComboBox);
-		
-		JLabel zdtsLabel = new JLabel("最短天数：");
-		zdtsLabel.setBounds(220, 32, 76, 15);
-		MensesState.add(zdtsLabel);
-		
-		JLabel zctsLabel = new JLabel("最长天数：");
-		zctsLabel.setBounds(375, 32, 76, 15);
-		MensesState.add(zctsLabel);
-		
-		JComboBox zdtsComboBox = new JComboBox();
-		zdtsComboBox.setModel(new DefaultComboBoxModel(new String[] {"10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43"}));
-		zdtsComboBox.setSelectedIndex(10);
-		zdtsComboBox.setBounds(291, 28, 63, 22);
-		MensesState.add(zdtsComboBox);
-		
-		JComboBox zctsComboBox = new JComboBox();
-		zctsComboBox.setModel(new DefaultComboBoxModel(new String[] {"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"}));
-		zctsComboBox.setBounds(450, 28, 63, 22);
-		MensesState.add(zctsComboBox);
 		
 		JLabel yjjtgjLabel = new JLabel("月经几天干净：");
 		yjjtgjLabel.setBounds(60, 56, 100, 15);
@@ -295,27 +340,52 @@ public class Menu extends JFrame {
 		bcyjsjLabel.setBounds(60, 81, 100, 15);
 		MensesState.add(bcyjsjLabel);
 		
-		JRadioButton yjljcRadioButton = new JRadioButton("月经量减少");
-		yjljcRadioButton.setBounds(60, 126, 127, 23);
-		MensesState.add(yjljcRadioButton);
+		JCheckBox yjljsCheckBox = new JCheckBox("月经量减少");
+		yjljsCheckBox.setBackground(Color.WHITE);
+		yjljsCheckBox.setBounds(60, 123, 109, 23);
+		MensesState.add(yjljsCheckBox);
 		
 		JLabel jslLabel = new JLabel("减少量：");
 		jslLabel.setBounds(220, 130, 58, 15);
 		MensesState.add(jslLabel);
+		jslLabel.setVisible(false);
 		
 		JComboBox jslComboBox = new JComboBox();
 		jslComboBox.setModel(new DefaultComboBoxModel(new String[] {"5ml", "10ml", "15ml", "20ml", "25ml", "30ml", "35ml", "40ml"}));
 		jslComboBox.setBounds(291, 126, 63, 23);
 		MensesState.add(jslComboBox);
+		jslComboBox.setVisible(false);
 		
 		JLabel kssjLabel = new JLabel("开始时间：");
 		kssjLabel.setBounds(375, 130, 76, 15);
 		MensesState.add(kssjLabel);
+		kssjLabel.setVisible(false);
 		
 		JComboBox kssjComboBox = new JComboBox();
 		kssjComboBox.setModel(new DefaultComboBoxModel(new String[] {"1个月前", "2个月前", "3个月前", "4个月前", "5个月前", "6个月前", "7个月前", "8个月前", "9个月前", "10个月前", "11个月前", "12个月前"}));
 		kssjComboBox.setBounds(449, 126, 84, 23);
 		MensesState.add(kssjComboBox);
+		kssjComboBox.setVisible(false);
+	
+		yjljsCheckBox.addItemListener(new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent arg0) {
+				// TODO Auto-generated method stub
+				JCheckBox jcb = (JCheckBox) arg0.getItem();
+		        if (jcb.isSelected()) {
+		        	jslLabel.setVisible(true);
+		        	jslComboBox.setVisible(true);
+		        	kssjLabel.setVisible(true);
+		        	kssjComboBox.setVisible(true);
+		        } else {
+		        	jslLabel.setVisible(false);
+		        	jslComboBox.setVisible(false);
+		        	kssjLabel.setVisible(false);
+		        	kssjComboBox.setVisible(false);
+		        } 
+			}
+		});
 		
 		JComboBox mcyjncomboBox = new JComboBox();
 		mcyjncomboBox.setModel(new DefaultComboBoxModel(new String[] {"2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033"}));
