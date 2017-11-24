@@ -35,8 +35,8 @@ public class Menu extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField nameTextField;
-	private JTextField textField;
-	private JTable table;
+	private JTextField telephoneTextField;
+	private JTable hyqkTable;
 
 	/**
 	 * Launch the application.
@@ -72,28 +72,28 @@ public class Menu extends JFrame {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		JMenu menu = new JMenu("菜单");
-		menuBar.add(menu);
+		JMenu cdMenu = new JMenu("菜单");
+		menuBar.add(cdMenu);
 		
-		JMenuItem menuItem = new JMenuItem("退出");
-		menuItem.addActionListener(new ActionListener() {
+		JMenuItem tcMenuItem = new JMenuItem("退出");
+		tcMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
 			}
 		});
-		menu.add(menuItem);
+		cdMenu.add(tcMenuItem);
 		
-		JMenu menu_1 = new JMenu("帮助");
-		menuBar.add(menu_1);
+		JMenu bzMenu = new JMenu("帮助");
+		menuBar.add(bzMenu);
 		
-		JMenuItem menuItem_1 = new JMenuItem("填写帮助");
-		menu_1.add(menuItem_1);
+		JMenuItem txbzMenuItem = new JMenuItem("填写帮助");
+		bzMenu.add(txbzMenuItem);
 		
-		JMenuItem menuItem_2 = new JMenuItem("软件使用");
-		menu_1.add(menuItem_2);
+		JMenuItem rjsyMenuItem = new JMenuItem("软件使用");
+		bzMenu.add(rjsyMenuItem);
 		
-		JMenuItem menuItem_3 = new JMenuItem("联系开发者");
-		menu_1.add(menuItem_3);
+		JMenuItem lxkfzMenuItem = new JMenuItem("联系开发者");
+		bzMenu.add(lxkfzMenuItem);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -106,43 +106,43 @@ public class Menu extends JFrame {
 		contentPane.add(Info);
 		Info.setLayout(null);
 		
-		JLabel name = new JLabel("患者姓名：");
-		name.setBounds(110, 28, 65, 13);
-		Info.add(name);
+		JLabel nameLable = new JLabel("患者姓名：");
+		nameLable.setBounds(110, 28, 65, 13);
+		Info.add(nameLable);
 		
 		nameTextField = new JTextField();
 		nameTextField.setBounds(188, 26, 95, 17);
 		Info.add(nameTextField);
 		nameTextField.setColumns(10);
 		
-		JLabel label = new JLabel("电话：");
-		label.setBounds(339, 28, 63, 13);
-		Info.add(label);
+		JLabel telephoneLlabel = new JLabel("电话：");
+		telephoneLlabel.setBounds(339, 28, 63, 13);
+		Info.add(telephoneLlabel);
 		
-		JLabel lblcm = new JLabel("身高(cm)：");
-		lblcm.setBounds(603, 28, 87, 13);
-		Info.add(lblcm);
+		JLabel heightLable = new JLabel("身高(cm)：");
+		heightLable.setBounds(603, 28, 87, 13);
+		Info.add(heightLable);
 		
-		JLabel lblkg = new JLabel("体重(kg):");
-		lblkg.setBounds(844, 28, 78, 13);
-		Info.add(lblkg);
+		JLabel weightLable = new JLabel("体重(kg):");
+		weightLable.setBounds(844, 28, 78, 13);
+		Info.add(weightLable);
 		
-		textField = new JTextField();
-		textField.setBounds(394, 26, 95, 17);
-		Info.add(textField);
-		textField.setColumns(10);
+		telephoneTextField = new JTextField();
+		telephoneTextField.setBounds(394, 26, 95, 17);
+		Info.add(telephoneTextField);
+		telephoneTextField.setColumns(10);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"180", "179", "178", "177", "176", "175", "174", "173", "172", "171", "170", "169", "168", "167", "166", "165", "164", "163", "162", "161", "160", "159", "158", "157", "156", "155", "154", "153", "152"}));
-		comboBox.setSelectedIndex(1);
-		comboBox.setBounds(683, 23, 65, 22);
-		Info.add(comboBox);
+		JComboBox heightComboBox = new JComboBox();
+		heightComboBox.setModel(new DefaultComboBoxModel(new String[] {"180", "179", "178", "177", "176", "175", "174", "173", "172", "171", "170", "169", "168", "167", "166", "165", "164", "163", "162", "161", "160", "159", "158", "157", "156", "155", "154", "153", "152"}));
+		heightComboBox.setSelectedIndex(1);
+		heightComboBox.setBounds(683, 23, 65, 22);
+		Info.add(heightComboBox);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"75", "74", "73", "72", "71", "70", "69", "68", "67", "66", "65", "64", "63", "62"}));
-		comboBox_1.setSelectedIndex(1);
-		comboBox_1.setBounds(922, 23, 63, 22);
-		Info.add(comboBox_1);
+		JComboBox weightComboBox = new JComboBox();
+		weightComboBox.setModel(new DefaultComboBoxModel(new String[] {"75", "74", "73", "72", "71", "70", "69", "68", "67", "66", "65", "64", "63", "62"}));
+		weightComboBox.setSelectedIndex(1);
+		weightComboBox.setBounds(922, 23, 63, 22);
+		Info.add(weightComboBox);
 		
 		JPanel GravidityState = new JPanel();
 		GravidityState.setBackground(Color.GREEN);
@@ -150,17 +150,17 @@ public class Menu extends JFrame {
 		contentPane.add(GravidityState);
 		GravidityState.setLayout(null);
 		
-		JLabel label_9 = new JLabel("怀孕情况");
-		label_9.setBounds(0, 87, 63, 13);
-		GravidityState.add(label_9);
+		JLabel syqkLable = new JLabel("怀孕情况");
+		syqkLable.setBounds(0, 87, 63, 13);
+		GravidityState.add(syqkLable);
 		
-		JScrollPane scrollPane_3 = new JScrollPane();
-		scrollPane_3.setEnabled(false);
-		scrollPane_3.setBounds(81, -2, 1061, 198);
-		GravidityState.add(scrollPane_3);
+		JScrollPane hyqkScrollPane = new JScrollPane();
+		hyqkScrollPane.setEnabled(false);
+		hyqkScrollPane.setBounds(81, -2, 1061, 198);
+		GravidityState.add(hyqkScrollPane);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
+		hyqkTable = new JTable();
+		hyqkTable.setModel(new DefaultTableModel(
 			new Object[][] {
 				{null, null, null, null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null, null, null, null},
@@ -177,7 +177,7 @@ public class Menu extends JFrame {
 				"\u6000\u5B55\u6B21\u6570", "\u65F6\u95F4", "\u81EA\u7136\u53D7\u5B55", "\u8F85\u52A9\u751F\u6B96", "\u5B55\u5468", "\u5B55\u56CA", "\u80CE\u82BD", "\u80CE\u5FC3", "\u89C1\u7EA2", "\u80DE\u80CE\u60C5\u51B5\uFF08\u836F\u7269\uFF09", "\u6E05\u5BAB", "\u5907\u6CE8"
 			}
 		));
-		scrollPane_3.setViewportView(table);
+		hyqkScrollPane.setViewportView(hyqkTable);
 		
 		JPanel MarriageState = new JPanel();
 		MarriageState.setBackground(Color.ORANGE);
@@ -185,35 +185,35 @@ public class Menu extends JFrame {
 		contentPane.add(MarriageState);
 		MarriageState.setLayout(null);
 		
-		JLabel label_2 = new JLabel("婚育情况");
-		label_2.setBounds(0, 31, 52, 13);
-		MarriageState.add(label_2);
+		JLabel hyqkLabel = new JLabel("婚育情况");
+		hyqkLabel.setBounds(0, 31, 52, 13);
+		MarriageState.add(hyqkLabel);
 		
-		JLabel label_4 = new JLabel("次数：");
-		label_4.setBounds(294, 12, 52, 13);
-		MarriageState.add(label_4);
+		JLabel zdlccsLabel = new JLabel("次数：");
+		zdlccsLabel.setBounds(294, 12, 52, 13);
+		MarriageState.add(zdlccsLabel);
 		
-		JCheckBox chckbxNewCheckBox = new JCheckBox("有子女");
-		chckbxNewCheckBox.setBounds(378, 45, 73, 21);
-		MarriageState.add(chckbxNewCheckBox);
+		JCheckBox yznCheckBox = new JCheckBox("有子女");
+		yznCheckBox.setBounds(378, 45, 73, 21);
+		MarriageState.add(yznCheckBox);
 		
-		JCheckBox checkBox = new JCheckBox("配偶再婚");
-		checkBox.setBounds(227, 45, 86, 21);
-		MarriageState.add(checkBox);
+		JCheckBox pozhCheckBox = new JCheckBox("配偶再婚");
+		pozhCheckBox.setBounds(227, 45, 86, 21);
+		MarriageState.add(pozhCheckBox);
 		
-		JCheckBox checkBox_1 = new JCheckBox("目前再婚");
-		checkBox_1.setBounds(82, 45, 86, 21);
-		MarriageState.add(checkBox_1);
+		JCheckBox mqzhCheckBox = new JCheckBox("目前再婚");
+		mqzhCheckBox.setBounds(82, 45, 86, 21);
+		MarriageState.add(mqzhCheckBox);
 		
-		JCheckBox checkBox_2 = new JCheckBox("有过主动流产");
-		checkBox_2.setBounds(82, 8, 116, 21);
-		MarriageState.add(checkBox_2);
+		JCheckBox zdlcCheckBox = new JCheckBox("有过主动流产");
+		zdlcCheckBox.setBounds(82, 8, 116, 21);
+		MarriageState.add(zdlcCheckBox);
 		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"}));
-		comboBox_2.setSelectedIndex(0);
-		comboBox_2.setBounds(375, 7, 63, 22);
-		MarriageState.add(comboBox_2);
+		JComboBox zdlccsComboBox = new JComboBox();
+		zdlccsComboBox.setModel(new DefaultComboBoxModel(new String[] {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40"}));
+		zdlccsComboBox.setSelectedIndex(0);
+		zdlccsComboBox.setBounds(375, 7, 63, 22);
+		MarriageState.add(zdlccsComboBox);
 		
 		JPanel MensesState = new JPanel();
 		MensesState.setForeground(Color.BLACK);
@@ -222,112 +222,112 @@ public class Menu extends JFrame {
 		contentPane.add(MensesState);
 		MensesState.setLayout(null);
 		
-		JLabel label_8 = new JLabel("月经情况");
-		label_8.setBounds(0, 70, 63, 13);
-		MensesState.add(label_8);
+		JLabel yjqkLabel = new JLabel("月经情况");
+		yjqkLabel.setBounds(0, 70, 63, 13);
+		MensesState.add(yjqkLabel);
 		
-		JRadioButton radioButton_5 = new JRadioButton("月经规律");
-		radioButton_5.setBounds(60, 6, 137, 21);
-		MensesState.add(radioButton_5);
+		JRadioButton yjglRadioButton = new JRadioButton("月经规律");
+		yjglRadioButton.setBounds(60, 6, 137, 21);
+		MensesState.add(yjglRadioButton);
 		
-		JLabel label_10 = new JLabel("月经周期：");
-		label_10.setBounds(60, 33, 84, 13);
-		MensesState.add(label_10);
+		JLabel yjzqLabel = new JLabel("月经周期：");
+		yjzqLabel.setBounds(60, 33, 84, 13);
+		MensesState.add(yjzqLabel);
 		
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"40", "39", "38", "37", "36", "35", "34", "33", "32", "31", "30", "29", "28", "27", "26", "25", "24", "23", "22", "21", "20", "19", "18"}));
-		comboBox_3.setSelectedIndex(10);
-		comboBox_3.setBounds(134, 28, 63, 22);
-		MensesState.add(comboBox_3);
+		JComboBox yjzqComboBox = new JComboBox();
+		yjzqComboBox.setModel(new DefaultComboBoxModel(new String[] {"40", "39", "38", "37", "36", "35", "34", "33", "32", "31", "30", "29", "28", "27", "26", "25", "24", "23", "22", "21", "20", "19", "18"}));
+		yjzqComboBox.setSelectedIndex(10);
+		yjzqComboBox.setBounds(134, 28, 63, 22);
+		MensesState.add(yjzqComboBox);
 		
-		JLabel label_11 = new JLabel("第一次月经是：");
-		label_11.setBounds(60, 104, 100, 13);
-		MensesState.add(label_11);
+		JLabel dycyjLabel = new JLabel("第一次月经是：");
+		dycyjLabel.setBounds(60, 104, 100, 13);
+		MensesState.add(dycyjLabel);
 		
-		JComboBox comboBox_4 = new JComboBox();
-		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"10岁", "11岁", "12岁", "13岁", "14岁", "15岁", "16岁", "17岁", "18岁", "19岁", "20岁", "21岁", "22岁", "23岁", "24岁", "25岁", "26岁"}));
-		comboBox_4.setSelectedIndex(5);
-		comboBox_4.setBounds(153, 99, 54, 22);
-		MensesState.add(comboBox_4);
+		JComboBox dycyjComboBox = new JComboBox();
+		dycyjComboBox.setModel(new DefaultComboBoxModel(new String[] {"10岁", "11岁", "12岁", "13岁", "14岁", "15岁", "16岁", "17岁", "18岁", "19岁", "20岁", "21岁", "22岁", "23岁", "24岁", "25岁", "26岁"}));
+		dycyjComboBox.setSelectedIndex(5);
+		dycyjComboBox.setBounds(153, 99, 54, 22);
+		MensesState.add(dycyjComboBox);
 		
-		JLabel label_12 = new JLabel("最短天数：");
-		label_12.setBounds(220, 32, 76, 15);
-		MensesState.add(label_12);
+		JLabel zdtsLabel = new JLabel("最短天数：");
+		zdtsLabel.setBounds(220, 32, 76, 15);
+		MensesState.add(zdtsLabel);
 		
-		JLabel label_13 = new JLabel("最长天数：");
-		label_13.setBounds(375, 32, 76, 15);
-		MensesState.add(label_13);
+		JLabel zctsLabel = new JLabel("最长天数：");
+		zctsLabel.setBounds(375, 32, 76, 15);
+		MensesState.add(zctsLabel);
 		
-		JComboBox comboBox_5 = new JComboBox();
-		comboBox_5.setModel(new DefaultComboBoxModel(new String[] {"10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43"}));
-		comboBox_5.setSelectedIndex(10);
-		comboBox_5.setBounds(291, 28, 63, 22);
-		MensesState.add(comboBox_5);
+		JComboBox zdtsComboBox = new JComboBox();
+		zdtsComboBox.setModel(new DefaultComboBoxModel(new String[] {"10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43"}));
+		zdtsComboBox.setSelectedIndex(10);
+		zdtsComboBox.setBounds(291, 28, 63, 22);
+		MensesState.add(zdtsComboBox);
 		
-		JComboBox comboBox_6 = new JComboBox();
-		comboBox_6.setModel(new DefaultComboBoxModel(new String[] {"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"}));
-		comboBox_6.setBounds(450, 28, 63, 22);
-		MensesState.add(comboBox_6);
+		JComboBox zctsComboBox = new JComboBox();
+		zctsComboBox.setModel(new DefaultComboBoxModel(new String[] {"20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50"}));
+		zctsComboBox.setBounds(450, 28, 63, 22);
+		MensesState.add(zctsComboBox);
 		
-		JLabel label_14 = new JLabel("月经几天干净：");
-		label_14.setBounds(60, 56, 100, 15);
-		MensesState.add(label_14);
+		JLabel yjjtgjLabel = new JLabel("月经几天干净：");
+		yjjtgjLabel.setBounds(60, 56, 100, 15);
+		MensesState.add(yjjtgjLabel);
 		
-		JComboBox comboBox_7 = new JComboBox();
-		comboBox_7.setModel(new DefaultComboBoxModel(new String[] {"3", "4", "5", "6", "7", "8", "9"}));
-		comboBox_7.setBounds(153, 52, 54, 23);
-		MensesState.add(comboBox_7);
+		JComboBox yjjtgjComboBox = new JComboBox();
+		yjjtgjComboBox.setModel(new DefaultComboBoxModel(new String[] {"3", "4", "5", "6", "7", "8", "9"}));
+		yjjtgjComboBox.setBounds(153, 52, 54, 23);
+		MensesState.add(yjjtgjComboBox);
 		
-		JLabel label_15 = new JLabel("月经量：");
-		label_15.setBounds(220, 57, 58, 15);
-		MensesState.add(label_15);
+		JLabel yjlLabel = new JLabel("月经量：");
+		yjlLabel.setBounds(220, 57, 58, 15);
+		MensesState.add(yjlLabel);
 		
-		JComboBox comboBox_8 = new JComboBox();
-		comboBox_8.setModel(new DefaultComboBoxModel(new String[] {"20ml以下", "30ml-50ml", "50ml-60ml", "60ml-80ml", "80ml以上"}));
-		comboBox_8.setBounds(291, 52, 84, 23);
-		MensesState.add(comboBox_8);
+		JComboBox yjlComboBox = new JComboBox();
+		yjlComboBox.setModel(new DefaultComboBoxModel(new String[] {"20ml以下", "30ml-50ml", "50ml-60ml", "60ml-80ml", "80ml以上"}));
+		yjlComboBox.setBounds(291, 52, 84, 23);
+		MensesState.add(yjlComboBox);
 		
-		JLabel label_16 = new JLabel("末次月经时间：");
-		label_16.setBounds(60, 81, 100, 15);
-		MensesState.add(label_16);
+		JLabel bcyjsjLabel = new JLabel("末次月经时间：");
+		bcyjsjLabel.setBounds(60, 81, 100, 15);
+		MensesState.add(bcyjsjLabel);
 		
-		JRadioButton radioButton_7 = new JRadioButton("月经量有无减少");
-		radioButton_7.setBounds(60, 126, 127, 23);
-		MensesState.add(radioButton_7);
+		JRadioButton yjljcRadioButton = new JRadioButton("月经量减少");
+		yjljcRadioButton.setBounds(60, 126, 127, 23);
+		MensesState.add(yjljcRadioButton);
 		
-		JLabel label_17 = new JLabel("减少量：");
-		label_17.setBounds(220, 130, 58, 15);
-		MensesState.add(label_17);
+		JLabel jslLabel = new JLabel("减少量：");
+		jslLabel.setBounds(220, 130, 58, 15);
+		MensesState.add(jslLabel);
 		
-		JComboBox comboBox_9 = new JComboBox();
-		comboBox_9.setModel(new DefaultComboBoxModel(new String[] {"5ml", "10ml", "15ml", "20ml", "25ml", "30ml", "35ml", "40ml"}));
-		comboBox_9.setBounds(291, 126, 63, 23);
-		MensesState.add(comboBox_9);
+		JComboBox jslComboBox = new JComboBox();
+		jslComboBox.setModel(new DefaultComboBoxModel(new String[] {"5ml", "10ml", "15ml", "20ml", "25ml", "30ml", "35ml", "40ml"}));
+		jslComboBox.setBounds(291, 126, 63, 23);
+		MensesState.add(jslComboBox);
 		
-		JLabel label_18 = new JLabel("开始时间：");
-		label_18.setBounds(375, 130, 76, 15);
-		MensesState.add(label_18);
+		JLabel kssjLabel = new JLabel("开始时间：");
+		kssjLabel.setBounds(375, 130, 76, 15);
+		MensesState.add(kssjLabel);
 		
-		JComboBox comboBox_10 = new JComboBox();
-		comboBox_10.setModel(new DefaultComboBoxModel(new String[] {"1个月前", "2个月前", "3个月前", "4个月前", "5个月前", "6个月前", "7个月前", "8个月前", "9个月前", "10个月前", "11个月前", "12个月前"}));
-		comboBox_10.setBounds(449, 126, 84, 23);
-		MensesState.add(comboBox_10);
+		JComboBox kssjComboBox = new JComboBox();
+		kssjComboBox.setModel(new DefaultComboBoxModel(new String[] {"1个月前", "2个月前", "3个月前", "4个月前", "5个月前", "6个月前", "7个月前", "8个月前", "9个月前", "10个月前", "11个月前", "12个月前"}));
+		kssjComboBox.setBounds(449, 126, 84, 23);
+		MensesState.add(kssjComboBox);
 		
-		JComboBox comboBox_11 = new JComboBox();
-		comboBox_11.setModel(new DefaultComboBoxModel(new String[] {"2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033"}));
-		comboBox_11.setSelectedIndex(2);
-		comboBox_11.setBounds(153, 77, 54, 23);
-		MensesState.add(comboBox_11);
+		JComboBox mcyjncomboBox = new JComboBox();
+		mcyjncomboBox.setModel(new DefaultComboBoxModel(new String[] {"2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033"}));
+		mcyjncomboBox.setSelectedIndex(2);
+		mcyjncomboBox.setBounds(153, 77, 54, 23);
+		MensesState.add(mcyjncomboBox);
 		
-		JComboBox comboBox_12 = new JComboBox();
-		comboBox_12.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
-		comboBox_12.setBounds(214, 77, 54, 23);
-		MensesState.add(comboBox_12);
+		JComboBox mcyjyComboBox = new JComboBox();
+		mcyjyComboBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
+		mcyjyComboBox.setBounds(214, 77, 54, 23);
+		MensesState.add(mcyjyComboBox);
 		
-		JComboBox comboBox_13 = new JComboBox();
-		comboBox_13.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
-		comboBox_13.setBounds(278, 77, 54, 23);
-		MensesState.add(comboBox_13);
+		JComboBox mcyjrComboBox = new JComboBox();
+		mcyjrComboBox.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		mcyjrComboBox.setBounds(278, 77, 54, 23);
+		MensesState.add(mcyjrComboBox);
 		
 		JPanel AllergyHistory = new JPanel();
 		AllergyHistory.setBackground(new Color(255, 218, 185));
@@ -335,34 +335,34 @@ public class Menu extends JFrame {
 		contentPane.add(AllergyHistory);
 		AllergyHistory.setLayout(null);
 		
-		JLabel label_6 = new JLabel("过敏史");
-		label_6.setBounds(0, 33, 39, 13);
-		AllergyHistory.add(label_6);
+		JLabel gmsLabel = new JLabel("过敏史");
+		gmsLabel.setBounds(0, 33, 39, 13);
+		AllergyHistory.add(gmsLabel);
 		
-		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(50, 0, 562, 88);
-		AllergyHistory.add(scrollPane_2);
+		JScrollPane gmsScrollPane = new JScrollPane();
+		gmsScrollPane.setBounds(50, 0, 562, 88);
+		AllergyHistory.add(gmsScrollPane);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setLineWrap(true);
-		textArea.setText("例如：头孢类，青霉素过敏等");
-		scrollPane_2.setViewportView(textArea);
+		JTextArea gmsTextArea = new JTextArea();
+		gmsTextArea.setLineWrap(true);
+		gmsTextArea.setText("例如：头孢类，青霉素过敏等");
+		gmsScrollPane.setViewportView(gmsTextArea);
 		
-		textArea.addFocusListener(new FocusAdapter() {
+		gmsTextArea.addFocusListener(new FocusAdapter() {
 
 			@Override
 			public void focusGained(FocusEvent arg0) {
 				// TODO Auto-generated method stub
-				if(textArea.getText().equals("例如：头孢类，青霉素过敏等")) {
-					textArea.setText("");
+				if(gmsTextArea.getText().equals("例如：头孢类，青霉素过敏等")) {
+					gmsTextArea.setText("");
 				}				
 			}
 
 			@Override
 			public void focusLost(FocusEvent arg0) {
 				// TODO Auto-generated method stub
-				if(textArea.getText().length()<1) {
-					textArea.setText("例如：头孢类，青霉素过敏等");
+				if(gmsTextArea.getText().length()<1) {
+					gmsTextArea.setText("例如：头孢类，青霉素过敏等");
 				}
 			}
 			
@@ -375,40 +375,40 @@ public class Menu extends JFrame {
 		contentPane.add(FamilyState);
 		FamilyState.setLayout(null);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(48, 0, 564, 81);
-		FamilyState.add(scrollPane);
+		JScrollPane jzsScrollPane = new JScrollPane();
+		jzsScrollPane.setBounds(48, 0, 564, 81);
+		FamilyState.add(jzsScrollPane);
 		
 		
-		JTextArea FamilyStateTextArea = new JTextArea();
-		FamilyStateTextArea.setLineWrap(true);
-		FamilyStateTextArea.setText("例如：家族性遗传病，父母有无高血压病，糖尿病，高血脂，脑梗等;有无近亲结婚史");
-		FamilyStateTextArea.addFocusListener(new FocusAdapter() {
+		JTextArea jzsTextArea = new JTextArea();
+		jzsTextArea.setLineWrap(true);
+		jzsTextArea.setText("例如：家族性遗传病，父母有无高血压病，糖尿病，高血脂，脑梗等;有无近亲结婚史");
+		jzsTextArea.addFocusListener(new FocusAdapter() {
 
 			@Override
 			public void focusGained(FocusEvent arg0) {
 				// TODO Auto-generated method stub
-				if(FamilyStateTextArea.getText().equals("例如：家族性遗传病，父母有无高血压病，糖尿病，高血脂，脑梗等;有无近亲结婚史")) {
-					FamilyStateTextArea.setText("");
+				if(jzsTextArea.getText().equals("例如：家族性遗传病，父母有无高血压病，糖尿病，高血脂，脑梗等;有无近亲结婚史")) {
+					jzsTextArea.setText("");
 				}				
 			}
 
 			@Override
 			public void focusLost(FocusEvent arg0) {
 				// TODO Auto-generated method stub
-				if(FamilyStateTextArea.getText().length()<1) {
-					FamilyStateTextArea.setText("例如：家族性遗传病，父母有无高血压病，糖尿病，高血脂，脑梗等;有无近亲结婚史");
+				if(jzsTextArea.getText().length()<1) {
+					jzsTextArea.setText("例如：家族性遗传病，父母有无高血压病，糖尿病，高血脂，脑梗等;有无近亲结婚史");
 				}
 			}
 			
 			
 		});
 		
-		scrollPane.setViewportView(FamilyStateTextArea);
+		jzsScrollPane.setViewportView(jzsTextArea);
 		
-		JLabel label_1 = new JLabel("家族史");
-		label_1.setBounds(0, 0, 48, 81);
-		FamilyState.add(label_1);
+		JLabel jzsLabel = new JLabel("家族史");
+		jzsLabel.setBounds(0, 10, 38, 48);
+		FamilyState.add(jzsLabel);
 		
 		JButton saveButton = new JButton("保存");
 		saveButton.addActionListener(new ActionListener() {
@@ -426,46 +426,46 @@ public class Menu extends JFrame {
 		contentPane.add(PastHistory);
 		PastHistory.setLayout(null);
 		
-		JLabel label_3 = new JLabel("既往史");
-		label_3.setBounds(12, 112, 39, 13);
-		PastHistory.add(label_3);
+		JLabel jwsLabel = new JLabel("既往史");
+		jwsLabel.setBounds(12, 112, 39, 13);
+		PastHistory.add(jwsLabel);
 		
-		JRadioButton radioButton = new JRadioButton("高血压");
-		radioButton.setBounds(124, 8, 153, 21);
-		PastHistory.add(radioButton);
+		JRadioButton gxyRadioButton = new JRadioButton("高血压");
+		gxyRadioButton.setBounds(124, 8, 153, 21);
+		PastHistory.add(gxyRadioButton);
 		
-		JRadioButton radioButton_2 = new JRadioButton("糖尿病");
-		radioButton_2.setBounds(124, 46, 153, 21);
-		PastHistory.add(radioButton_2);
+		JRadioButton tnbRadioButton = new JRadioButton("糖尿病");
+		tnbRadioButton.setBounds(124, 46, 153, 21);
+		PastHistory.add(tnbRadioButton);
 		
-		JRadioButton radioButton_4 = new JRadioButton("甲状腺疾病");
-		radioButton_4.setBounds(124, 79, 153, 21);
-		PastHistory.add(radioButton_4);
+		JRadioButton jzxjbRadioButton = new JRadioButton("甲状腺疾病");
+		jzxjbRadioButton.setBounds(124, 79, 153, 21);
+		PastHistory.add(jzxjbRadioButton);
 		
-		JRadioButton radioButton_6 = new JRadioButton("近亲结婚");
-		radioButton_6.setBounds(124, 104, 153, 21);
-		PastHistory.add(radioButton_6);
+		JRadioButton jqjhRadioButton = new JRadioButton("近亲结婚");
+		jqjhRadioButton.setBounds(124, 104, 153, 21);
+		PastHistory.add(jqjhRadioButton);
 		
-		JRadioButton radioButton_8 = new JRadioButton("免疫系统疾病");
-		radioButton_8.setBounds(124, 138, 153, 21);
-		PastHistory.add(radioButton_8);
+		JRadioButton myxtjbRadioButton = new JRadioButton("免疫系统疾病");
+		myxtjbRadioButton.setBounds(124, 138, 153, 21);
+		PastHistory.add(myxtjbRadioButton);
 		
-		JRadioButton radioButton_1 = new JRadioButton("接触化学制剂及毒品");
-		radioButton_1.setBounds(124, 163, 153, 21);
-		PastHistory.add(radioButton_1);
+		JRadioButton jchxzjjdpRadioButton = new JRadioButton("接触化学制剂及毒品");
+		jchxzjjdpRadioButton.setBounds(124, 163, 153, 21);
+		PastHistory.add(jchxzjjdpRadioButton);
 		
-		JRadioButton radioButton_3 = new JRadioButton("高血脂");
-		radioButton_3.setBounds(124, 188, 153, 21);
-		PastHistory.add(radioButton_3);
+		JRadioButton gxzRadioButton = new JRadioButton("高血脂");
+		gxzRadioButton.setBounds(124, 188, 153, 21);
+		PastHistory.add(gxzRadioButton);
 		
-		JTextArea textArea_1 = new JTextArea();
-		textArea_1.setLineWrap(true);
-		textArea_1.setBounds(322, 50, 184, 175);
-		PastHistory.add(textArea_1);
+		JTextArea qtjbTextArea = new JTextArea();
+		qtjbTextArea.setLineWrap(true);
+		qtjbTextArea.setBounds(322, 50, 184, 175);
+		PastHistory.add(qtjbTextArea);
 		
-		JLabel label_7 = new JLabel("其他疾病(备注)");
-		label_7.setBounds(378, 12, 63, 13);
-		PastHistory.add(label_7);
+		JLabel qtjbLabel = new JLabel("其他疾病(备注)");
+		qtjbLabel.setBounds(335, 12, 122, 13);
+		PastHistory.add(qtjbLabel);
 		
 		JPanel OperationHistory = new JPanel();
 		OperationHistory.setBackground(new Color(0, 102, 0));
@@ -473,33 +473,33 @@ public class Menu extends JFrame {
 		contentPane.add(OperationHistory);
 		OperationHistory.setLayout(null);
 		
-		JLabel label_5 = new JLabel("手术史");
-		label_5.setBounds(12, 76, 63, 13);
-		OperationHistory.add(label_5);
+		JLabel operationHistoryLabel = new JLabel("手术史");
+		operationHistoryLabel.setBounds(12, 76, 63, 13);
+		OperationHistory.add(operationHistoryLabel);
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(82, 0, 436, 181);
-		OperationHistory.add(scrollPane_1);
+		JScrollPane operationHistoryScrollPane = new JScrollPane();
+		operationHistoryScrollPane.setBounds(82, 0, 436, 181);
+		OperationHistory.add(operationHistoryScrollPane);
 		
-		JTextArea OperationHistoryTextArea = new JTextArea();		
-		OperationHistoryTextArea.setLineWrap(true);
-		scrollPane_1.setViewportView(OperationHistoryTextArea);
-		OperationHistoryTextArea.setText("例如：宫腔镜，腹腔镜，开腹手术，输卵");
-		OperationHistoryTextArea.addFocusListener(new FocusAdapter() {
+		JTextArea operationHistoryTextArea = new JTextArea();		
+		operationHistoryTextArea.setLineWrap(true);
+		operationHistoryScrollPane.setViewportView(operationHistoryTextArea);
+		operationHistoryTextArea.setText("例如：宫腔镜，腹腔镜，开腹手术，输卵");
+		operationHistoryTextArea.addFocusListener(new FocusAdapter() {
 
 			@Override
 			public void focusGained(FocusEvent arg0) {
 				// TODO Auto-generated method stub
-				if(OperationHistoryTextArea.getText().equals("例如：宫腔镜，腹腔镜，开腹手术，输卵")) {
-					OperationHistoryTextArea.setText("");
+				if(operationHistoryTextArea.getText().equals("例如：宫腔镜，腹腔镜，开腹手术，输卵")) {
+					operationHistoryTextArea.setText("");
 				}				
 			}
 
 			@Override
 			public void focusLost(FocusEvent arg0) {
 				// TODO Auto-generated method stub
-				if(OperationHistoryTextArea.getText().length()<1) {
-					OperationHistoryTextArea.setText("例如：宫腔镜，腹腔镜，开腹手术，输卵");
+				if(operationHistoryTextArea.getText().length()<1) {
+					operationHistoryTextArea.setText("例如：宫腔镜，腹腔镜，开腹手术，输卵");
 				}
 			}
 			
