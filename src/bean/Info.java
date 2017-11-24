@@ -13,6 +13,7 @@ public class Info {
 	public String tel = "";
 	public String height = "";
 	public String weight = "";
+	public String id = "";
 	
 	public Info() {
 		super();
