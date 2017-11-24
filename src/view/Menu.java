@@ -194,18 +194,22 @@ public class Menu extends JFrame {
 		MarriageState.add(zdlccsLabel);
 		
 		JCheckBox yznCheckBox = new JCheckBox("有子女");
+		yznCheckBox.setBackground(Color.WHITE);
 		yznCheckBox.setBounds(378, 45, 73, 21);
 		MarriageState.add(yznCheckBox);
 		
 		JCheckBox pozhCheckBox = new JCheckBox("配偶再婚");
+		pozhCheckBox.setBackground(Color.WHITE);
 		pozhCheckBox.setBounds(227, 45, 86, 21);
 		MarriageState.add(pozhCheckBox);
 		
 		JCheckBox mqzhCheckBox = new JCheckBox("目前再婚");
+		mqzhCheckBox.setBackground(Color.WHITE);
 		mqzhCheckBox.setBounds(82, 45, 86, 21);
 		MarriageState.add(mqzhCheckBox);
 		
 		JCheckBox zdlcCheckBox = new JCheckBox("有过主动流产");
+		zdlcCheckBox.setBackground(Color.WHITE);
 		zdlcCheckBox.setBounds(82, 8, 116, 21);
 		MarriageState.add(zdlcCheckBox);
 		
@@ -370,7 +374,7 @@ public class Menu extends JFrame {
 		});
 		
 		JPanel FamilyState = new JPanel();
-		FamilyState.setBackground(SystemColor.info);
+		FamilyState.setBackground(Color.WHITE);
 		FamilyState.setBounds(12, 627, 612, 81);
 		contentPane.add(FamilyState);
 		FamilyState.setLayout(null);
@@ -411,6 +415,7 @@ public class Menu extends JFrame {
 		FamilyState.add(jzsLabel);
 		
 		JButton saveButton = new JButton("保存");
+		saveButton.setBackground(Color.GREEN);
 		saveButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "保存成功！");
@@ -431,30 +436,37 @@ public class Menu extends JFrame {
 		PastHistory.add(jwsLabel);
 		
 		JRadioButton gxyRadioButton = new JRadioButton("高血压");
+		gxyRadioButton.setBackground(Color.WHITE);
 		gxyRadioButton.setBounds(124, 8, 153, 21);
 		PastHistory.add(gxyRadioButton);
 		
 		JRadioButton tnbRadioButton = new JRadioButton("糖尿病");
+		tnbRadioButton.setBackground(Color.WHITE);
 		tnbRadioButton.setBounds(124, 46, 153, 21);
 		PastHistory.add(tnbRadioButton);
 		
 		JRadioButton jzxjbRadioButton = new JRadioButton("甲状腺疾病");
+		jzxjbRadioButton.setBackground(Color.WHITE);
 		jzxjbRadioButton.setBounds(124, 79, 153, 21);
 		PastHistory.add(jzxjbRadioButton);
 		
 		JRadioButton jqjhRadioButton = new JRadioButton("近亲结婚");
+		jqjhRadioButton.setBackground(Color.WHITE);
 		jqjhRadioButton.setBounds(124, 104, 153, 21);
 		PastHistory.add(jqjhRadioButton);
 		
 		JRadioButton myxtjbRadioButton = new JRadioButton("免疫系统疾病");
+		myxtjbRadioButton.setBackground(Color.WHITE);
 		myxtjbRadioButton.setBounds(124, 138, 153, 21);
 		PastHistory.add(myxtjbRadioButton);
 		
 		JRadioButton jchxzjjdpRadioButton = new JRadioButton("接触化学制剂及毒品");
+		jchxzjjdpRadioButton.setBackground(Color.WHITE);
 		jchxzjjdpRadioButton.setBounds(124, 163, 153, 21);
 		PastHistory.add(jchxzjjdpRadioButton);
 		
 		JRadioButton gxzRadioButton = new JRadioButton("高血脂");
+		gxzRadioButton.setBackground(Color.WHITE);
 		gxzRadioButton.setBounds(124, 188, 153, 21);
 		PastHistory.add(gxzRadioButton);
 		
