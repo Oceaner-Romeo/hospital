@@ -1,8 +1,8 @@
 package bean;
 
-public class AllergyHistory {
+public class Others {
 
-	public AllergyHistory() {
+	public Others() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

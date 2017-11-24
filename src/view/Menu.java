@@ -100,7 +100,7 @@ public class Menu extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel Info = new JPanel();
-		Info.setBackground(SystemColor.info);
+		Info.setBackground(Color.WHITE);
 		Info.setToolTipText("Info");
 		Info.setBounds(12, 12, 1142, 53);
 		contentPane.add(Info);
@@ -145,7 +145,7 @@ public class Menu extends JFrame {
 		Info.add(weightComboBox);
 		
 		JPanel GravidityState = new JPanel();
-		GravidityState.setBackground(Color.GREEN);
+		GravidityState.setBackground(Color.WHITE);
 		GravidityState.setBounds(12, 77, 1142, 196);
 		contentPane.add(GravidityState);
 		GravidityState.setLayout(null);
@@ -180,7 +180,7 @@ public class Menu extends JFrame {
 		hyqkScrollPane.setViewportView(hyqkTable);
 		
 		JPanel MarriageState = new JPanel();
-		MarriageState.setBackground(Color.ORANGE);
+		MarriageState.setBackground(Color.WHITE);
 		MarriageState.setBounds(12, 281, 612, 74);
 		contentPane.add(MarriageState);
 		MarriageState.setLayout(null);
@@ -217,7 +217,7 @@ public class Menu extends JFrame {
 		
 		JPanel MensesState = new JPanel();
 		MensesState.setForeground(Color.BLACK);
-		MensesState.setBackground(Color.BLUE);
+		MensesState.setBackground(Color.WHITE);
 		MensesState.setBounds(12, 363, 612, 155);
 		contentPane.add(MensesState);
 		MensesState.setLayout(null);
@@ -330,7 +330,7 @@ public class Menu extends JFrame {
 		MensesState.add(mcyjrComboBox);
 		
 		JPanel AllergyHistory = new JPanel();
-		AllergyHistory.setBackground(new Color(255, 218, 185));
+		AllergyHistory.setBackground(Color.WHITE);
 		AllergyHistory.setBounds(12, 527, 612, 88);
 		contentPane.add(AllergyHistory);
 		AllergyHistory.setLayout(null);
@@ -421,7 +421,7 @@ public class Menu extends JFrame {
 		contentPane.add(saveButton);
 		
 		JPanel PastHistory = new JPanel();
-		PastHistory.setBackground(new Color(199, 21, 133));
+		PastHistory.setBackground(Color.WHITE);
 		PastHistory.setBounds(636, 285, 518, 237);
 		contentPane.add(PastHistory);
 		PastHistory.setLayout(null);
@@ -468,7 +468,7 @@ public class Menu extends JFrame {
 		PastHistory.add(qtjbLabel);
 		
 		JPanel OperationHistory = new JPanel();
-		OperationHistory.setBackground(new Color(0, 102, 0));
+		OperationHistory.setBackground(Color.WHITE);
 		OperationHistory.setBounds(636, 527, 518, 181);
 		contentPane.add(OperationHistory);
 		OperationHistory.setLayout(null);
