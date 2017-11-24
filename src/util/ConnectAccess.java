@@ -11,7 +11,7 @@ public class ConnectAccess {
 		
 		try {
 			Class.forName("com.hxtt.sql.access.AccessDriver").newInstance();
-			String url = "jdbc:Access:///D://stu2.mdb";
+			String url = "jdbc:Access:///../../data/record.accdb";
 	        Connection conn = DriverManager.getConnection(url, "", "");
 	        Statement stmt = conn.createStatement();  
 	        ResultSet rs = stmt.executeQuery("select * from Table1");

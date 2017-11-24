@@ -41,6 +41,15 @@ public class Menu extends JFrame {
 	private JTable hyqkTable;
 
 	/**
+	 * 组件信息 
+	 */
+	public String name = "";
+	public String tel = "";
+	public String height = "";
+	public String weight = "";	
+	
+	
+	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
@@ -489,7 +498,10 @@ public class Menu extends JFrame {
 		saveButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "保存成功！");
-
+				/*
+				 * 获取表单内容 并 打印
+				 */
+				
 			}
 		});
 		saveButton.setBounds(576, 706, 104, 23);
@@ -512,32 +524,32 @@ public class Menu extends JFrame {
 		
 		JRadioButton tnbRadioButton = new JRadioButton("糖尿病");
 		tnbRadioButton.setBackground(Color.WHITE);
-		tnbRadioButton.setBounds(124, 46, 153, 21);
+		tnbRadioButton.setBounds(124, 51, 153, 21);
 		PastHistory.add(tnbRadioButton);
 		
 		JRadioButton jzxjbRadioButton = new JRadioButton("甲状腺疾病");
 		jzxjbRadioButton.setBackground(Color.WHITE);
-		jzxjbRadioButton.setBounds(124, 79, 153, 21);
+		jzxjbRadioButton.setBounds(124, 85, 153, 21);
 		PastHistory.add(jzxjbRadioButton);
 		
 		JRadioButton jqjhRadioButton = new JRadioButton("近亲结婚");
 		jqjhRadioButton.setBackground(Color.WHITE);
-		jqjhRadioButton.setBounds(124, 104, 153, 21);
+		jqjhRadioButton.setBounds(124, 125, 153, 21);
 		PastHistory.add(jqjhRadioButton);
 		
 		JRadioButton myxtjbRadioButton = new JRadioButton("免疫系统疾病");
 		myxtjbRadioButton.setBackground(Color.WHITE);
-		myxtjbRadioButton.setBounds(124, 138, 153, 21);
+		myxtjbRadioButton.setBounds(124, 158, 153, 21);
 		PastHistory.add(myxtjbRadioButton);
 		
 		JRadioButton jchxzjjdpRadioButton = new JRadioButton("接触化学制剂及毒品");
 		jchxzjjdpRadioButton.setBackground(Color.WHITE);
-		jchxzjjdpRadioButton.setBounds(124, 163, 153, 21);
+		jchxzjjdpRadioButton.setBounds(124, 181, 153, 21);
 		PastHistory.add(jchxzjjdpRadioButton);
 		
 		JRadioButton gxzRadioButton = new JRadioButton("高血脂");
 		gxzRadioButton.setBackground(Color.WHITE);
-		gxzRadioButton.setBounds(124, 188, 153, 21);
+		gxzRadioButton.setBounds(124, 204, 153, 21);
 		PastHistory.add(gxzRadioButton);
 		
 		JTextArea qtjbTextArea = new JTextArea();
