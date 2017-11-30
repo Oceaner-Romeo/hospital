@@ -88,7 +88,7 @@ public class Query extends JFrame {
 		label_8.setBounds(77, 882, 86, 22);
 		contentPane.add(label_8);
 		
-		JLabel label_9 = new JLabel("101011");
+		JLabel label_9 = new JLabel("10101110");
 		label_9.setFont(new Font("ËÎÌו", Font.PLAIN, 14));
 		label_9.setBounds(184, 882, 74, 23);
 		contentPane.add(label_9);
