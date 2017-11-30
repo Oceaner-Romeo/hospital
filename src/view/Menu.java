@@ -33,6 +33,7 @@ import java.awt.SystemColor;
 import javax.swing.UIManager;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import java.awt.Font;
 
 public class Menu extends JFrame {
 
@@ -53,18 +54,18 @@ public class Menu extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Menu frame = new Menu();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Menu frame = new Menu();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * 创建窗口
@@ -174,6 +175,11 @@ public class Menu extends JFrame {
 		hyqkTable = new JTable();
 		hyqkTable.setModel(new DefaultTableModel(
 			new Object[][] {
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null, null, null, null},
@@ -489,7 +495,7 @@ public class Menu extends JFrame {
 		jzsLabel.setBounds(0, 10, 38, 48);
 		FamilyState.add(jzsLabel);
 		
-		JButton saveButton = new JButton("保存");
+		RButton saveButton = new RButton("保存");
 		saveButton.setBackground(Color.GREEN);
 		saveButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -500,8 +506,18 @@ public class Menu extends JFrame {
 				
 			}
 		});
-		saveButton.setBounds(576, 706, 104, 23);
+		saveButton.setBounds(485, 706, 104, 23);
 		contentPane.add(saveButton);
+		
+		RButton backButton = new RButton("返回");
+		backButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new FirstMenu();
+				dispose();
+			}
+		});
+		backButton.setBounds(646, 705, 97, 23);
+		contentPane.add(backButton);
 		
 		JPanel PastHistory = new JPanel();
 		PastHistory.setBackground(Color.WHITE);
@@ -576,6 +592,7 @@ public class Menu extends JFrame {
 		operationHistoryTextArea.setLineWrap(true);
 		operationHistoryScrollPane.setViewportView(operationHistoryTextArea);
 		operationHistoryTextArea.setText("例如：宫腔镜，腹腔镜，开腹手术，输卵");
+		
 		operationHistoryTextArea.addFocusListener(new FocusAdapter() {
 
 			@Override
