@@ -10,6 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Query extends JFrame {
 
@@ -18,18 +20,18 @@ public class Query extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Query frame = new Query();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					Query frame = new Query();
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	/**
 	 * Create the frame.
@@ -541,5 +543,24 @@ public class Query extends JFrame {
 		JLabel label_78 = new JLabel("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 		label_78.setBounds(48, 263, 910, 15);
 		contentPane.add(label_78);
+		
+		RButton tjhxgjlButton = new RButton("\u6DFB\u52A0\u6216\u4FEE\u6539\u8BB0\u5F55");
+		tjhxgjlButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						Menu frame = new Menu();
+						frame.setVisible(true);
+						dispose();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
+			}
+		});
+		tjhxgjlButton.setBounds(780, 803, 178, 30);
+		contentPane.add(tjhxgjlButton);
 	}
 }

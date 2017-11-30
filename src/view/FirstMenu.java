@@ -84,7 +84,17 @@ public class FirstMenu extends JFrame
         findButton.setIcon(findButtonImg);
 		findButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				EventQueue.invokeLater(new Runnable() {
+				public void run() {
+					try {
+						FindInput Findframe = new FindInput();
+						Findframe.setVisible(true);
+						dispose();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			});
 				
 			}
 		});
