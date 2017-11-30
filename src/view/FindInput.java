@@ -31,16 +31,9 @@ public class FindInput extends JFrame
     JLabel jl;  
     ImageIcon image;  
 
-    //创建一个按钮用于测试的。  
-    JButton jb;  
-//    public static void main(String[] args)  
-//    {  
-//        new FirstMenu();  
-//    }  
-
     public FindInput()  
     {
-//        Dimension   screensize   =   Toolkit.getDefaultToolkit().getScreenSize();
+//      Dimension   screensize   =   Toolkit.getDefaultToolkit().getScreenSize();
 //		int width = (int)screensize.getWidth();	//显示器宽度
 //		int height = (int)screensize.getHeight();
 //		System.out.println("width:"+width+"\nheight:"+height);
@@ -57,7 +50,7 @@ public class FindInput extends JFrame
         jp.setBounds(0,0,image.getIconWidth(),image.getIconHeight());  
 
         jl=new JLabel(image);  
-//      jl.setBounds(0,0,image.getIconWidth(),image.getIconHeight());  
+        jl.setBounds(0,0,image.getIconWidth(),image.getIconHeight());  
         jp.add(jl);  
 		
         JLabel cxfsLabel = new JLabel("\u8BF7\u9009\u62E9\u67E5\u8BE2\u65B9\u5F0F\uFF1A");

@@ -99,7 +99,6 @@ public class FirstMenu extends JFrame
 			}
 		});
 //		getContentPane().add(findButton);
-        //创建一个测试按钮   
 
         //将jp放到最底层。                                    /*层次关系可见方法2下面的注释*/
         layeredPane.add(jp,JLayeredPane.DEFAULT_LAYER);  
