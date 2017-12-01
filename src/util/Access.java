@@ -24,7 +24,7 @@ public class Access {
 	public static void insert(String ID, String pname, String ptel, String height, String weight) {
 		connection();
 		System.out.println("ID:"+ID+"\npname:"+pname+"\nptel:"+ptel+"\nheight:"+height+"\nweight:"+weight);
-		sql = "INSERT INTO info(\"" + ID+"\",\"" +pname+"\",\"" +ptel+"\",\""+height+"\",\""+weight+"\")" + " VALUES (ID, pname, ptel, height,weight)";  
+		sql = "insert into info(ID, pname, ptel, height,weight)" + " values (\"" + ID+"\",\"" +pname+"\",\"" +ptel+"\",\""+height+"\",\""+weight+"\")";  
 		System.out.println(sql);
 		try {
 			stmt.executeUpdate(sql);
