@@ -733,7 +733,7 @@ public class Menu extends JFrame {
 				JOptionPane.showMessageDialog(null, name+"\n"+tel+"\n"+height+"\n"+weight);
 				
 				Access.insert(tel, name, tel, height, weight);				
-				
+				//Access.query();
 			}
 		});
 		saveButton.setBounds(485, 706, 104, 23);

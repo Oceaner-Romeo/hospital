@@ -24,10 +24,10 @@ public class Access {
 	public static void insert(String ID, String pname, String ptel, String height, String weight) {
 		connection();
 		System.out.println("ID:"+ID+"\npname:"+pname+"\nptel:"+ptel+"\nheight:"+height+"\nweight:"+weight);
-		sql = "insert into info(ID, pname, ptel, height,weight)" + " values (\"" + ID+"\",\"" +pname+"\",\"" +ptel+"\",\""+height+"\",\""+weight+"\")";  
+		sql = "insert into info(ID,pname,ptel,height,weight)" + " values (\"" + ID+"\",\"" +pname+"\",\"" +ptel+"\",\""+height+"\",\""+weight+"\")";  
 		System.out.println(sql);
 		try {
-			stmt.executeUpdate(sql);
+			stmt.execute(sql);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,24 +35,45 @@ public class Access {
 		close();
 	}
 	
-	public void update() {
+	public static void update() {
 		
 	}
 	
-	public void delete() {
+	public static void delete() {
 		
 	}
 	
-	public void query() {
+	public static void query() {
+		connection();
 		
+		try {
+			rs = stmt.executeQuery("select * from hyzk");
+			while(rs.next()){
+                // 通过字段检索
+                
+                String btqk = rs.getString("btqk");
+                String bz = rs.getString("bz");
+    
+                // 输出数据
+             
+                System.out.print("btqk: " + btqk);
+                System.out.print("\nbz: " + bz);
+                System.out.print("\n");
+            }
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		close();
 	}
 	
 	public static void connection() {
 		try {
-			Class.forName("com.hxtt.sql.access.AccessDriver").newInstance();
+			Class.forName("com.hxtt.sql.access.AccessDriver");
 	        conn = DriverManager.getConnection(url, "", "");
-	        stmt = conn.createStatement();  
-	         
+	        stmt = conn.createStatement();  	         
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
