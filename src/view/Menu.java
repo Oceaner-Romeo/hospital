@@ -33,6 +33,9 @@ import java.awt.SystemColor;
 import javax.swing.UIManager;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import util.Access;
+
 import java.awt.Font;
 
 public class Menu extends JFrame {
@@ -50,6 +53,57 @@ public class Menu extends JFrame {
 	public String height = "";
 	public String weight = "";	
 	
+
+	/*过敏史+家族史+手术史*/
+	public String gmString = "";
+	public String jzString = "";
+	public String operationHistoryString = "";
+	
+	
+	
+	/*与既往史有关的变量*/
+	public String gxyString = "";
+	public String tnbString = "";
+	public String jzxjbString = "";
+	public String jqjhString = "";
+	public String myxtjbString = "";
+	public String jchxzhhdpString = "";
+	public String gxzString = "";
+	public String qtjbString = "";
+	
+	/*与怀孕情况有关的变量*/
+	public String csString = "";
+	public String sjString = "";
+	public String zrsyString = "";
+	public String fzszString = "";
+	public String yzString = "";
+	public String yzjhString = "";
+	public String tyString = "";
+	public String txString = "";
+	public String jhString = "";
+	public String btqkString = "";
+	public String qgString = "";
+	public String bzString = "";
+	
+	/*婚育情况*/
+	public String zdlcString = "";
+	public String zdlccsString = "";
+	public String mqzhString = "";
+	public String pozhString = "";
+	public String yznString = "";
+	
+	/*有关月经情况的变量*/
+	public String yjbglString = "";
+	public String yjzqString = "";
+	public String zdtsString = "";
+	public String zctsString = "";
+	public String yjjtgjString = "";
+	public String yjlString = "";
+	public String mcyjsjString = "";
+	public String dycyjString = "";
+	public String yjljsString = "";
+	public String jslyjString = "";
+	public String kssjString = "";
 	
 	/**
 	 * Launch the application.
@@ -71,13 +125,13 @@ public class Menu extends JFrame {
 	 * 创建窗口
 	 */
 	public Menu() {
-		/*获取显示器大小*/
+		/*获取显示器大小*//*
 		Dimension   screensize   =   Toolkit.getDefaultToolkit().getScreenSize();
 		int width = (int)screensize.getWidth();	//显示器宽度
 		int height = (int)screensize.getHeight();
 		System.out.println("width:"+width+"\nheight:"+height);
 		int realWidth = (int) (width*0.9);	//转化后的窗口大小
-		int realHeight = (int)(height*0.8);
+		int realHeight = (int)(height*0.8);*/
 		setTitle("习惯性流产初诊患者资料");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1166, 788);
@@ -495,20 +549,6 @@ public class Menu extends JFrame {
 		jzsLabel.setBounds(0, 10, 38, 48);
 		FamilyState.add(jzsLabel);
 		
-		RButton saveButton = new RButton("保存");
-		saveButton.setBackground(Color.GREEN);
-		saveButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "保存成功！");
-				/*
-				 * 获取表单内容 并 打印
-				 */
-				
-			}
-		});
-		saveButton.setBounds(485, 706, 104, 23);
-		contentPane.add(saveButton);
-		
 		RButton backButton = new RButton("返回");
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -588,31 +628,119 @@ public class Menu extends JFrame {
 		operationHistoryScrollPane.setBounds(82, 0, 436, 181);
 		OperationHistory.add(operationHistoryScrollPane);
 		
-		JTextArea operationHistoryTextArea = new JTextArea();		
-		operationHistoryTextArea.setLineWrap(true);
-		operationHistoryScrollPane.setViewportView(operationHistoryTextArea);
-		operationHistoryTextArea.setText("例如：宫腔镜，腹腔镜，开腹手术，输卵");
+		JTextArea shsTextArea = new JTextArea();		
+		shsTextArea.setLineWrap(true);
+		operationHistoryScrollPane.setViewportView(shsTextArea);
+		shsTextArea.setText("例如：宫腔镜，腹腔镜，开腹手术，输卵");
 		
-		operationHistoryTextArea.addFocusListener(new FocusAdapter() {
+		shsTextArea.addFocusListener(new FocusAdapter() {
 
 			@Override
 			public void focusGained(FocusEvent arg0) {
 				// TODO Auto-generated method stub
-				if(operationHistoryTextArea.getText().equals("例如：宫腔镜，腹腔镜，开腹手术，输卵")) {
-					operationHistoryTextArea.setText("");
+				if(shsTextArea.getText().equals("例如：宫腔镜，腹腔镜，开腹手术，输卵")) {
+					shsTextArea.setText("");
 				}				
 			}
 
 			@Override
 			public void focusLost(FocusEvent arg0) {
 				// TODO Auto-generated method stub
-				if(operationHistoryTextArea.getText().length()<1) {
-					operationHistoryTextArea.setText("例如：宫腔镜，腹腔镜，开腹手术，输卵");
+				if(shsTextArea.getText().length()<1) {
+					shsTextArea.setText("例如：宫腔镜，腹腔镜，开腹手术，输卵");
 				}
 			}
 			
 			
 		});
+		RButton saveButton = new RButton("保存");
+		saveButton.setBackground(Color.GREEN);
+		saveButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				/*
+				 * 获取表单内容 并 打印
+				 */
+				name = nameTextField.getText();
+				tel = telephoneTextField.getText();
+				height = (String)heightComboBox.getSelectedItem();
+				weight = (String)weightComboBox.getSelectedItem();
+				/*过敏史+家族史+手术史*/
+				gmString = gmsTextArea.getText();
+				jzString = jzsTextArea.getText();
+				operationHistoryString = shsTextArea.getText();
+				
+				
+				/*与既往史有关的变量*/
+				if(gxyRadioButton.isSelected()) {
+					gxyString = "高血压";
+				}
+				if(tnbRadioButton.isSelected()) {
+					tnbString = "糖尿病";
+				}
+				if(jzxjbRadioButton.isSelected()) {
+					jzxjbString = "甲状腺疾病";
+				}
+				if(jqjhRadioButton.isSelected()) {
+					jqjhString = "近亲结婚";
+				}
+				if(myxtjbRadioButton.isSelected()) {
+					myxtjbString = "免疫系统疾病";
+				}
+				if(jchxzjjdpRadioButton.isSelected()) {
+					jchxzhhdpString = "接触化学制剂及毒品";
+				}
+				if(gxzRadioButton.isSelected()) {
+					gxzString = "高血脂";
+				}
+				qtjbString = qtjbTextArea.getText();
+				
+				
+				/*与怀孕情况有关的变量*/
+				
+				csString = (String)hyqkTable.getValueAt(1, 0);
+				sjString = (String)hyqkTable.getValueAt(1, 1);
+				zrsyString = (String)hyqkTable.getValueAt(1, 2);
+				fzszString = (String)hyqkTable.getValueAt(1, 3);
+				yzString = (String)hyqkTable.getValueAt(1, 4);
+				yzjhString = (String)hyqkTable.getValueAt(1, 5);
+				tyString = (String)hyqkTable.getValueAt(1, 6);
+				txString = (String)hyqkTable.getValueAt(1, 7);
+				jhString = (String)hyqkTable.getValueAt(1, 8);
+				btqkString = (String)hyqkTable.getValueAt(1, 9);
+				qgString = (String)hyqkTable.getValueAt(1, 10);
+				bzString = (String)hyqkTable.getValueAt(1, 11);
+				
+				/*婚育情况*/
+				zdlcString = zdlcCheckBox.getText();
+				zdlccsString = (String)zdlccsComboBox.getSelectedItem();
+				mqzhString = mqzhCheckBox.getText();
+				pozhString = pozhCheckBox.getText();
+				yznString = yznCheckBox.getText();
+				
+				/*有关月经情况的变量*/
+				yjbglString = yjbglCheckBox.getText();
+				yjzqString = (String)yjzqComboBox.getSelectedItem();
+				zdtsString = (String)zdtsComboBox.getSelectedItem();
+				zctsString = (String)zctsComboBox.getSelectedItem();
+				yjjtgjString = (String)yjjtgjComboBox.getSelectedItem();
+				yjlString = (String)yjlComboBox.getSelectedItem();
+				mcyjsjString = (String)mcyjncomboBox.getSelectedItem()+(String)mcyjyComboBox.getSelectedItem()+(String)mcyjrComboBox.getSelectedItem();
+				dycyjString = (String)dycyjComboBox.getSelectedItem();
+				yjljsString = yjljsCheckBox.getText();
+				jslyjString = (String)jslComboBox.getSelectedItem();
+				kssjString = (String)kssjComboBox.getSelectedItem();
+				JOptionPane.showMessageDialog(null, name+"\n"+tel+"\n"+height+"\n"+weight);
+				
+				Access.insert(tel, name, tel, height, weight);				
+				
+			}
+		});
+		saveButton.setBounds(485, 706, 104, 23);
+		contentPane.add(saveButton);
+		
+		
 		
 	}
+	
 }
