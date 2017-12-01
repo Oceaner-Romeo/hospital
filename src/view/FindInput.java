@@ -16,6 +16,8 @@ import javax.swing.JComboBox;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -44,7 +46,9 @@ public class FindInput extends JFrame
 //		setBounds(100, 100, 1166, 788);
 		
         layeredPane=new JLayeredPane();  
-        image=new ImageIcon("data/img/Menu.jpg");//随便找一张图就可以看到效果。        
+		Reader readerfindin =new InputStreamReader( 
+				getClass().getResourceAsStream("/img/Menu.jpg")); 
+		image = new ImageIcon(getClass().getResource("/img/Menu.jpg"));        
         //创建背景的那些东西  
         jp=new JPanel();  
         jp.setBounds(0,0,image.getIconWidth(),image.getIconHeight());  

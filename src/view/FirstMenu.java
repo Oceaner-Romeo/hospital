@@ -12,6 +12,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.awt.event.ActionEvent;
 
 //我们用JLayeredPane，JLayeredPane 为 JFC/Swing 容器添加了深度，允许组件在需要时互相重叠。
@@ -46,7 +48,9 @@ public class FirstMenu extends JFrame
 		setBounds(100, 100, 1166, 788);
 		
         layeredPane=new JLayeredPane();  
-        image=new ImageIcon("data/img/Menu.jpg");//随便找一张图就可以看到效果。        
+		Reader readerpan =new InputStreamReader( 
+				getClass().getResourceAsStream("/img/Menu.jpg")); 
+		image = new ImageIcon(getClass().getResource("/img/Menu.jpg"));
         //创建背景的那些东西  
         jp=new JPanel();  
         jp.setBounds(0,0,image.getIconWidth(),image.getIconHeight());  
@@ -57,7 +61,9 @@ public class FirstMenu extends JFrame
 
         JButton writeButton = new JButton("\u5F55\u5165\u65B0\u6570\u636E");
 		writeButton.setBounds(134, 171, 150, 150);
-		ImageIcon writeButtonImg = new ImageIcon("data/img/writeButton.jpg");
+		Reader readerwirte =new InputStreamReader( 
+				getClass().getResourceAsStream("/img/writeButton.jpg")); 
+		ImageIcon writeButtonImg=new ImageIcon(getClass().getResource("/img/writeButton.jpg"));
         writeButton.setIcon(writeButtonImg);
 		writeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -80,7 +86,9 @@ public class FirstMenu extends JFrame
 		
 		JButton findButton = new JButton("\u67E5\u8BE2\u6570\u636E");
 		findButton.setBounds(505, 171, 150, 150);
-		ImageIcon findButtonImg = new ImageIcon("data/img/findButton.jpg");
+		Reader readerfind =new InputStreamReader( 
+				getClass().getResourceAsStream("/img/findButton.jpg")); 
+		ImageIcon findButtonImg = new ImageIcon(getClass().getResource("/img/findButton.jpg"));
         findButton.setIcon(findButtonImg);
 		findButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
