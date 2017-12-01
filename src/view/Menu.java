@@ -34,6 +34,7 @@ import javax.swing.UIManager;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Font;
+import javax.swing.JToolBar;
 
 public class Menu extends JFrame {
 
@@ -191,6 +192,9 @@ public class Menu extends JFrame {
 			}
 		));
 		hyqkScrollPane.setViewportView(hyqkTable);
+		
+		JToolBar toolBar = new JToolBar();
+		hyqkScrollPane.setColumnHeaderView(toolBar);
 		
 		JPanel MarriageState = new JPanel();
 		MarriageState.setBackground(Color.WHITE);
